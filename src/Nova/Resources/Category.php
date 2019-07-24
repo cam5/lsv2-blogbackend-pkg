@@ -24,12 +24,12 @@ namespace Lasallesoftware\Blogbackend\Nova\Resources;
 
 // LaSalle Software classes
 use Lasallesoftware\Library\Authentication\Models\Personbydomain;
-use Lasallesoftware\Library\Nova\Fields\LookupDescription;
-use Lasallesoftware\Library\Nova\Fields\LookupDomain;
-use Lasallesoftware\Library\Nova\Fields\LookupEnabled;
-use Lasallesoftware\Library\Nova\Fields\Title;
-use Lasallesoftware\Library\Nova\Fields\Uuid;
-use Lasallesoftware\Library\Nova\Resources\BaseResource;
+use Lasallesoftware\Novabackend\Nova\Fields\LookupDescription;
+use Lasallesoftware\Novabackend\Nova\Fields\LookupDomain;
+use Lasallesoftware\Novabackend\Nova\Fields\LookupEnabled;
+use Lasallesoftware\Novabackend\Nova\Fields\Title;
+use Lasallesoftware\Novabackend\Nova\Fields\Uuid;
+use Lasallesoftware\Novabackend\Nova\Resources\BaseResource;
 
 // Laravel Nova classes
 use Laravel\Nova\Fields\BelongsTo;
@@ -133,7 +133,7 @@ class Category extends BaseResource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Installed_domain', 'installed_domain', 'Lasallesoftware\Library\Nova\Resources\Installed_domain')
+            BelongsTo::make('Installed_domain', 'installed_domain', 'Lasallesoftware\Novabackend\Nova\Resources\Installed_domain')
                 ->creationRules('required')
                 ->updateRules('required')
                 ->hideFromIndex()
